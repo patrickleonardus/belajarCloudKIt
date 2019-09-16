@@ -96,51 +96,6 @@ class ViewController: UIViewController {
         
     }
     
-    func localNotification(){
-        let center = UNUserNotificationCenter.current()
-        
-        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
-            if granted == false {
-                
-            }
-        }
-        
-        let content = UNMutableNotificationContent()
-        content.title = "Haloo"
-        content.body = "This is only for the test"
-        content.sound = UNNotificationSound(named: UNNotificationSoundName(rawValue: Bundle.main.path(forResource: "ios_gmail_sound", ofType: "caf")!))
-        
-        // How to get indonesia date and time
-        
-//        let date = "15 September 2019 T 23:13:00"
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.locale = Locale(identifier: "id_ID")
-//        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+7")
-//        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-//        dateFormatter.dateFormat = "dd MMMM yyyy 'T' HH:mm:ss"
-        
-        
-        
-       
-        let date1 = Date()
-        let date2 = "15 September 2019 23:13:00"
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yyyy HH:mm:ss"
-        print(date1)
-        print(date2)
-//        let dateComponent = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute, .second], from: dateFormatter.date(from: date)!)
-//        let dateComponent = Calendar.current.dateComponents([.day, .month, .year, .hour, .minute, .second], from: date1)
-//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponent, repeats: false)
-//
-//        let id = UUID().uuidString
-//        let request =  UNNotificationRequest(identifier: id, content: content, trigger: trigger)
-//
-//        center.add(request) { (error) in
-//
-//        }
-        
-    }
-
     @IBAction func btnAddName(_ sender: Any) {
         let alert = UIAlertController(title: "Add Name", message: "Enter your name below", preferredStyle: .alert)
         alert.addTextField { (textField) in
